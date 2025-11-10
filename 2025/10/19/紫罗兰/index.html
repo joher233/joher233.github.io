@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title> | Hexo</title>
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>HEXO</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;HEXO</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1></h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/10/19
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="紫罗兰"><a href="#紫罗兰" class="headerlink" title="紫罗兰"></a>紫罗兰</h1><p>有了豆包的力量，胜利是必然的（</p>
+<p>这道题主要需要知道这些概念：扩域，特征值，若尔当标准型。</p>
+<p>先看这篇文章，了解最主要的原理：<a target="_blank" rel="noopener" href="https://tanglee.top/2024/03/19/dlp-in-matrix-group/">矩阵离散对数 DLP in Matrix Groups | tl2cents blog</a>也就是说，一般情况下，存在可逆矩阵P使得M&#x3D;P <em>J</em> P^-1,其中J为若尔当标准型矩阵<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20251019165048437.png" alt="image-20251019165048437"></p>
+<p>其中λi跟矩阵M的特征值有关。</p>
+<p>由于M&#x3D;P <em>J</em> P^-1，A&#x3D;M^n，所以A&#x3D;P <em>J^n</em> P^-1（矩阵幂的相似变换，数学归纳法证明）</p>
+<p>由此可得J&#x3D;P^-1 <em>M</em> P，J^n&#x3D;p^-1 <em>A</em> P，同时J为若尔当标准型矩阵，还有一个性质，<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20251019170059268.png" alt="image-20251019170059268"></p>
+<p>详见这篇文章<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/333708195">Jordan 型矩阵的幂 - 知乎</a>那么，n就可以用J^n中的元素表述出来  n&#x3D;a12*λ &#x2F;a11。</p>
+<p>求解n的办法找到后就是做前提准备，寻找λ值，这里要求M的特征值.根据这本数学书<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20251019170650948.png" alt="image-20251019170650948"></p>
+<p>得到特征值的求解方式，但是实际求起来会非常麻烦，还好sagemath里可以直接求，就不过多赘述。</p>
+<p>求得特征值后应该可以直接算的，但是根据原来解紫罗兰的经验，M的特征值不在GF(p)中，需要转化到更大的扩域去求，sagemath同样可以直接实现。</p>
+<p>那么基本原理和已知都搞定了，可以尝试带入运算了</p>
+<p>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> long_to_bytes</span><br><span class="line"><span class="comment">#复制粘贴p,M,A</span></span><br><span class="line">p = </span><br><span class="line">M_rows = </span><br><span class="line">A_rows = </span><br><span class="line"></span><br><span class="line">F = GF(p)</span><br><span class="line">M = matrix(F, M_rows)</span><br><span class="line">A = matrix(F, A_rows)</span><br><span class="line"></span><br><span class="line"><span class="comment">#计算特征值与扩域的次数</span></span><br><span class="line">char_poly = M.charpoly()</span><br><span class="line">irreducible_factors = char_poly.factor()</span><br><span class="line">max_degree = <span class="built_in">max</span>(factor[<span class="number">0</span>].degree() <span class="keyword">for</span> factor <span class="keyword">in</span> irreducible_factors)</span><br><span class="line">K = GF(p^max_degree, name=<span class="string">&#x27;w&#x27;</span>)  <span class="comment"># 扩域GF(p^max_degree)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#将矩阵转换到扩域上</span></span><br><span class="line">M_K = M.change_ring(K)</span><br><span class="line">A_K = A.change_ring(K)</span><br><span class="line"></span><br><span class="line"><span class="comment">#在扩域中计算若尔当标准形和变换矩阵</span></span><br><span class="line">J, P = M_K.jordan_form(subdivide=<span class="literal">False</span>, transformation=<span class="literal">True</span>)</span><br><span class="line">Jn = P.inverse() * A_K * P</span><br><span class="line"></span><br><span class="line"><span class="comment">#提取若尔当块求解n</span></span><br><span class="line">n_val = <span class="literal">None</span></span><br><span class="line">n_dim = <span class="number">4</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n_dim - <span class="number">1</span>):</span><br><span class="line">    <span class="keyword">if</span> J[i, i+<span class="number">1</span>] == <span class="number">1</span>:  <span class="comment"># 找到若尔当块标志</span></span><br><span class="line">        lam = J[i, i]       <span class="comment"># 特征值λ（在扩域K中）</span></span><br><span class="line">        b11 = Jn[i, i]      <span class="comment"># λ^n</span></span><br><span class="line">        b12 = Jn[i, i+<span class="number">1</span>]    <span class="comment"># n*λ^&#123;n-1&#125;</span></span><br><span class="line">        <span class="keyword">if</span> b11 != <span class="number">0</span>:</span><br><span class="line">            <span class="comment"># 扩域中计算n = (b12 * λ) / b11（乘法逆元）</span></span><br><span class="line">            n_val = (b12 * lam) * b11.inverse()</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">n_int = ZZ(n_val)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;flag:&quot;</span>, long_to_bytes(n_int).decode())</span><br><span class="line">exit()</span><br></pre></td></tr></table></figure>
+
+<p>解出flag: TSCTF-J{Eternal_Love_and_Beauty!}</p>
+<p>事实上，如果M可以对角化，则不需要寻找若尔当块的步骤，直接解线性方程即可，会更加简便，但是根据原来的经验，M是不可对角化的。</p>
+<p>虽然用ai刚跑出来这道题的时候觉得ai很牛逼，但是现在仔细想一想，我已经用类似的方法跑了快20次了，这次非常幸运能做出来，可见ai效率是非常低下的（也有可能是我太fw没法给ai提示），ai替代人类生态位可能还很久远罢（</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 Hexo
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;John Doe
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
